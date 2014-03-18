@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'leetspeak'
 
 arg = File.expand_path(ARGV[0])
 abort('usage: elite <directory|file>') unless arg
@@ -10,7 +10,7 @@ files = Dir.exists?(arg) ?  Dir.glob(arg + '/**/*.rb') : [arg]
 files.each do |path|
   File.open(path) do |file|
     file.each_line do |line|
-       line if line =~ /\A\s+?#/
+      puts line.leet(false) if line =~ /\A\s+?#/
     end
   end
 end
