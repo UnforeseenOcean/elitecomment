@@ -7,7 +7,12 @@ arg = File.expand_path(ARGV[0])
 abort('usage: elite <directory|file>') unless arg
 abort("error: cannot find #{arg}") unless File.exists?(arg)
 
+
 files = Dir.exists?(arg) ?  Dir.glob(arg + '/**/*.rb') : [arg]
+
+print "l33tz0r1ng #{files.size} f1l3z. j00 5ur3?: "
+answer = $stdin.gets.chomp
+abort("k") unless answer == 'y3s'
 
 files.each do |path|
   tmp = Tempfile.new('working')
