@@ -10,7 +10,7 @@ abort("3rr0r: c4nn0t f1nd #{arg}") unless File.exists?(arg)
 
 files = Dir.exists?(arg) ?  Dir.glob(arg + '/**/*.rb') : [arg]
 
-print "l33tz0r1ng #{files.size} f1l3z. j00 5ur3?: "
+print "l33tz0r1ng #{files.size} f1l3z 1n #{arg}. j00 5ur3?: "
 answer = $stdin.gets.chomp
 abort("k") unless answer == 'y3s'
 
