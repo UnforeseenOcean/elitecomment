@@ -4,8 +4,8 @@ require 'tempfile'
 require 'fileutils'
 
 arg = File.expand_path(ARGV[0])
-abort('usage: elite <directory|file>') unless arg
-abort("error: cannot find #{arg}") unless File.exists?(arg)
+abort('u54g3: elite.rb <d1r3c70ry|f1l3>') unless arg
+abort("3rr0r: c4nn0t f1nd #{arg}") unless File.exists?(arg)
 
 
 files = Dir.exists?(arg) ?  Dir.glob(arg + '/**/*.rb') : [arg]
@@ -33,7 +33,7 @@ files.each do |path|
 
     tmp.rewind
     FileUtils.mv(tmp.path, path)
-    puts '%4d comments: %s' % [count, path]
+    puts '%4d c0mm3n75: %s' % [count, path]
   ensure
     tmp.close
     tmp.unlink
